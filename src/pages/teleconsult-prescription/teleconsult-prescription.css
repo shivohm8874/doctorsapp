@@ -1,0 +1,142 @@
+.tele-rx-page {
+  min-height: 100vh;
+  background: #eef5ff;
+  color: #202238;
+  padding-bottom: 104px;
+}
+
+.tele-rx-page .tele-rx-topbar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0;
+  right: 0;
+  z-index: 80 !important;
+  justify-content: flex-start;
+}
+
+.tele-rx-topbar h1 {
+  flex: 1;
+  text-align: left;
+}
+
+.tele-rx-content {
+  padding: 100px 14px 18px !important;
+  display: grid;
+  gap: 12px;
+}
+
+.tele-rx-card,
+.tele-rx-submit {
+  border: 1px solid #dbe6f8;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.96);
+  padding: 14px;
+  box-shadow: 0 14px 30px rgba(35, 67, 116, 0.08);
+}
+
+.tele-rx-card h3 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+}
+
+.tele-rx-card textarea,
+.tele-rx-card input {
+  width: 100%;
+  border: 1px solid #d8e2f5;
+  border-radius: 12px;
+  background: #f9fbff;
+  color: #23324e;
+  font-size: 0.84rem;
+  padding: 12px 13px;
+  outline: none;
+}
+
+.tele-rx-chip-grid {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tele-rx-chip-grid button {
+  min-height: 34px;
+  border-radius: 999px;
+  border: 1px solid #d7e2f6;
+  background: #f6faff;
+  color: #2f5f9d;
+  padding: 0 12px;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.tele-rx-chip-grid button.active {
+  background: #eaf4ff;
+  border-color: #bcd3f6;
+}
+
+.tele-rx-primary {
+  min-height: 42px;
+  border-radius: 12px;
+  border: 0;
+  background: linear-gradient(130deg, #2f67d2, #1fb09f);
+  color: #fff;
+  font-size: 0.84rem;
+  font-weight: 800;
+  padding: 0 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.tele-rx-review p {
+  margin: 0 0 12px;
+  color: #5f7291;
+}
+
+.tele-rx-stars {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.tele-rx-stars button {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid #d7e2f6;
+  background: #f6faff;
+  color: #8ba3c6;
+}
+
+.tele-rx-stars button.active {
+  background: #fff4cf;
+  border-color: #f0d57e;
+  color: #b28300;
+}
+
+.tele-rx-review-grid {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.tele-rx-review-grid article {
+  border: 1px solid #e0e6f3;
+  border-radius: 12px;
+  background: #fafcff;
+  padding: 10px;
+  display: grid;
+  gap: 4px;
+}
+
+.tele-rx-review-grid small {
+  color: #6c7a91;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.tele-rx-review-grid strong {
+  color: #22324c;
+  font-size: 0.84rem;
+}

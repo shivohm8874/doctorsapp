@@ -1,0 +1,426 @@
+.app {
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(1200px 600px at -5% -10%, rgba(106, 168, 255, 0.24), transparent 52%),
+    radial-gradient(900px 560px at 110% 2%, rgba(76, 223, 194, 0.18), transparent 48%),
+    linear-gradient(180deg, #ecf4ff 0%, #f8fbff 58%, #edf8f7 100%);
+}
+
+.app::before,
+.app::after {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(12px);
+}
+
+.app::before {
+  width: 260px;
+  height: 260px;
+  right: -70px;
+  top: 140px;
+  background: radial-gradient(circle at 30% 30%, rgba(78, 113, 255, 0.35), rgba(78, 113, 255, 0));
+}
+
+.app::after {
+  width: 220px;
+  height: 220px;
+  left: -80px;
+  bottom: 180px;
+  background: radial-gradient(circle at 50% 50%, rgba(53, 207, 176, 0.28), rgba(53, 207, 176, 0));
+}
+
+.app-screen {
+  min-height: 100vh;
+  animation: page-in 360ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.992);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.dashboard-page,
+.patients-page,
+.appointments-page,
+.learning-page,
+.store-page,
+.settings-page,
+.wallet-page {
+  min-height: 100vh;
+  background: transparent !important;
+  color: #1b2740;
+  padding-bottom: 112px !important;
+}
+
+.mobile-topbar,
+.wallet-topbar {
+  height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 0 16px;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  color: #10243f !important;
+  border-bottom: 1px solid rgba(158, 182, 221, 0.46);
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.9), rgba(239, 247, 255, 0.78)) !important;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 26px rgba(34, 62, 110, 0.08);
+}
+
+.mobile-topbar h1,
+.wallet-topbar h1 {
+  margin: 0;
+  font-size: clamp(1.25rem, 5vw, 1.65rem) !important;
+  letter-spacing: -0.015em;
+}
+
+.bar-icon {
+  border: 1px solid #d3e0f5 !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  color: #33517d !important;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  box-shadow: 0 6px 14px rgba(40, 67, 112, 0.08);
+}
+
+.bar-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bar-svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.dot {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ff5d68, #ff7d4f);
+  color: #fff;
+  border: 2px solid #fff;
+  font-size: 10px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  padding: 0 3px;
+}
+
+.dashboard-content,
+.patients-content,
+.appointments-content,
+.settings-content,
+.learning-content,
+.store-content,
+.wallet-content,
+.form-content {
+  padding: 18px 14px 0 !important;
+  display: grid;
+  gap: 14px;
+}
+
+.dashboard-page .dashboard-content {
+  padding: 92px 14px 16px !important;
+  gap: 12px;
+}
+
+.welcome,
+.summary-grid,
+.search-row,
+.tabs,
+.date-chip,
+.section,
+.earning,
+.hero,
+.title,
+.title-row,
+.wallet-strip,
+.purple-note,
+.query-card,
+.plain-card,
+.warn-card,
+.form-card,
+.benefits,
+.tip-card,
+.benefit-card,
+.kpi-card,
+.patient-card,
+.appointment-card,
+.module-card,
+.product-card,
+.tx-card,
+.slab-card,
+.action-card,
+.onboard-card {
+  border: 1px solid rgba(155, 179, 218, 0.45) !important;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(245, 250, 255, 0.78)) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 10px 30px rgba(36, 67, 116, 0.1) !important;
+  backdrop-filter: blur(10px);
+}
+
+.kpi-card,
+.action-card,
+.patient-card,
+.appointment-card,
+.product-card,
+.module-card {
+  border-radius: 20px !important;
+}
+
+.benefit-card,
+.wallet-header,
+.hero,
+.wallet-strip,
+.purple-note,
+.tip-card,
+.onboard-brand-banner {
+  border: 1px solid rgba(119, 162, 224, 0.35) !important;
+  border-radius: 22px !important;
+  background:
+    radial-gradient(circle at 14% -10%, rgba(255, 255, 255, 0.25), transparent 45%),
+    linear-gradient(130deg, #2f67d2 0%, #2a8dc9 58%, #1daea0 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 16px 38px rgba(33, 89, 169, 0.3) !important;
+}
+
+.benefit-card p,
+.tip-card p,
+.wallet-header p,
+.purple-note p,
+.hero p,
+.wallet-strip p,
+.onboard-brand-banner p {
+  color: rgba(235, 246, 255, 0.9) !important;
+}
+
+.benefit-head,
+.benefit-head span,
+.white-cta,
+.tip-card h4,
+.hero h2,
+.wallet-strip h3,
+.purple-note h3,
+.onboard-brand-banner h1 {
+  color: #fff !important;
+}
+
+.white-cta,
+.primary,
+.book-btn,
+.onboard-btn.primary {
+  border: 0 !important;
+  border-radius: 12px !important;
+  background: linear-gradient(130deg, #2f67d2, #2eaed1) !important;
+  color: #fff !important;
+  box-shadow: 0 10px 22px rgba(44, 108, 203, 0.28);
+}
+
+.ghost,
+.book-later-btn,
+.onboard-btn {
+  border: 1px solid #cedef7 !important;
+  border-radius: 12px !important;
+  background: #f4f9ff !important;
+  color: #2f5b92 !important;
+}
+
+.search-box,
+.field,
+.onboard-input,
+.onboard-form textarea,
+.onboard-form select {
+  border: 1px solid #d3e2f7 !important;
+  border-radius: 12px !important;
+  background: rgba(255, 255, 255, 0.85) !important;
+  color: #233a61 !important;
+}
+
+.search-box span,
+.patient-main p,
+.appointment-main p,
+.main p,
+.slab-card p,
+.tx-card p,
+.module-card p,
+.product-card p,
+.query-card p,
+.plain-card p,
+.warn-card p,
+.onboard-subtitle {
+  color: #54698d !important;
+}
+
+.bottom-nav {
+  position: fixed;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  height: 76px;
+  border-radius: 20px;
+  border: 1px solid rgba(157, 180, 218, 0.52);
+  background: rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 16px 34px rgba(31, 57, 105, 0.16);
+  backdrop-filter: blur(14px);
+  padding: 0 8px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  z-index: 70;
+}
+
+.nav-item {
+  border: 0;
+  background: transparent;
+  border-radius: 12px;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 4px;
+  color: #6780a7 !important;
+  font-size: 0.76rem;
+}
+
+.nav-item.active {
+  background: linear-gradient(145deg, #e9f3ff, #e4fbf8);
+  color: #1e5c95 !important;
+  font-weight: 700;
+}
+
+.nav-svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.fab-btn {
+  right: 16px !important;
+  bottom: 98px !important;
+  width: 60px !important;
+  height: 60px !important;
+  border-radius: 18px !important;
+  border: 1px solid #b8d3f7;
+  background: linear-gradient(140deg, #2f67d2, #20b59f) !important;
+  color: #fff !important;
+  box-shadow: 0 14px 28px rgba(38, 100, 190, 0.28) !important;
+}
+
+.status.confirmed,
+.pill.employee,
+.visit-chip {
+  background: linear-gradient(120deg, #2f67d2, #2197cb) !important;
+  color: #fff !important;
+  border: 0 !important;
+}
+
+.status.pending,
+.status.platform,
+.pill.other,
+.issue {
+  background: #eef5ff !important;
+  color: #3f5f92 !important;
+  border: 1px solid #d3e2f7 !important;
+}
+
+.offcanvas {
+  width: min(84vw, 340px);
+  border-right: 1px solid rgba(138, 167, 212, 0.55);
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.94), rgba(238, 247, 255, 0.82)) !important;
+  box-shadow: 20px 0 48px rgba(34, 66, 118, 0.22) !important;
+  backdrop-filter: blur(12px);
+}
+
+.menu-head {
+  border-bottom: 1px solid rgba(202, 219, 243, 0.65);
+  background: linear-gradient(130deg, #2f67d2, #21b4a0) !important;
+}
+
+.menu-item {
+  border-radius: 12px;
+}
+
+.menu-item:hover {
+  background: #e9f3ff !important;
+  color: #2466ac !important;
+}
+
+.menu-overlay {
+  background: rgba(14, 28, 50, 0.38) !important;
+}
+
+.onboard-page {
+  background:
+    radial-gradient(circle at 10% 8%, rgba(120, 178, 255, 0.25), transparent 45%),
+    radial-gradient(circle at 96% 0%, rgba(56, 214, 184, 0.2), transparent 46%),
+    linear-gradient(180deg, #eaf4ff 0%, #f4faff 100%) !important;
+}
+
+.onboard-step {
+  background: rgba(255, 255, 255, 0.25) !important;
+}
+
+.onboard-step.active {
+  background: #e8ffff !important;
+}
+
+.onboard-note {
+  border: 1px solid rgba(177, 205, 245, 0.45) !important;
+  background: rgba(238, 247, 255, 0.82) !important;
+  color: #35669d !important;
+}
+
+.card-rise {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fade-up 420ms ease forwards;
+  animation-delay: var(--d, 0ms);
+}
+
+@keyframes fade-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 380px) {
+  .bottom-nav {
+    left: 8px;
+    right: 8px;
+  }
+
+  .dashboard-content,
+  .patients-content,
+  .appointments-content,
+  .settings-content,
+  .learning-content,
+  .store-content,
+  .wallet-content,
+  .form-content {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+}

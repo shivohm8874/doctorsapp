@@ -1,0 +1,76 @@
+.splash-page {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background:
+    radial-gradient(circle at 8% 2%, #dbe6ff 0%, transparent 34%),
+    radial-gradient(circle at 100% 100%, #d9f9ee 0%, transparent 30%),
+    linear-gradient(180deg, #edf3ff 0%, #f9fbff 100%);
+}
+
+.splash-card {
+  width: min(430px, 100%);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #dce6fa;
+  border-radius: 28px;
+  padding: 40px 28px;
+  text-align: center;
+  box-shadow: 0 24px 46px rgba(36, 60, 108, 0.16);
+  backdrop-filter: blur(10px);
+}
+
+.splash-mark {
+  width: 68px;
+  height: 68px;
+  margin: 0 auto 18px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #3965e6, #2d56cf);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 10px 24px rgba(46, 85, 194, 0.34);
+}
+
+.splash-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.splash-card h1 {
+  margin: 0;
+  font-size: clamp(2rem, 7vw, 3rem);
+  font-weight: 700;
+  color: #1f2435;
+}
+
+.splash-card p {
+  margin: 10px 0 24px;
+  color: #59657f;
+  font-size: 1rem;
+}
+
+.splash-card button {
+  width: 100%;
+  height: 52px;
+  border: 0;
+  border-radius: 14px;
+  background: linear-gradient(130deg, #355fe6, #2247b8);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 16px 28px rgba(40, 74, 173, 0.28);
+}
+
+.btn-icon {
+  width: 14px;
+  height: 14px;
+  transform: rotate(180deg);
+}
