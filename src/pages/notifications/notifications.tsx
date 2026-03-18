@@ -15,6 +15,24 @@ type Notice = {
   cta?: string
 }
 
+type TeleconsultCase = {
+  id: string
+  appointmentId?: string
+  patientName?: string
+}
+
+const CASE_STORAGE_KEY = "doctor:teleconsultCase"
+
+function readTeleconsultCase() {
+  try {
+    const raw = window.sessionStorage.getItem(CASE_STORAGE_KEY)
+    if (!raw) return null
+    return JSON.parse(raw) as TeleconsultCase
+  } catch {
+    return null
+  }
+}
+
 const todayNotices: Notice[] = [
   {
     title: "Profile verification is in progress",
@@ -53,6 +71,7 @@ const yesterdayNotices: Notice[] = [
 ]
 
 function DoctorNotifications({ onNavigate }: NotificationsProps) {
+  const activeCase = readTeleconsultCase()
   const unreadCount = todayNotices.filter((item) => item.unread).length
 
   function handleCta(cta?: string) {
@@ -60,6 +79,7 @@ function DoctorNotifications({ onNavigate }: NotificationsProps) {
     if (cta === "Open Store") onNavigate("store")
     else if (cta === "Open Learning") onNavigate("learning")
     else if (cta === "Open Profile") onNavigate("settings")
+    else if (cta === "Join Call") onNavigate("teleconsult-room")
     else onNavigate("appointments")
   }
 
@@ -87,6 +107,18 @@ function DoctorNotifications({ onNavigate }: NotificationsProps) {
         <section className="doc-notif-group card-rise" style={{ "--d": "35ms" } as CSSProperties}>
           <div className="doc-notif-head"><h2>Today</h2><span>Recent</span></div>
           <div className="doc-notif-list">
+            {activeCase && (
+              <article className="doc-notif-item unread">
+                <div className="dot-wrap"><i /></div>
+                <div>
+                  <div className="row"><h4>Teleconsultation ready</h4><small>Now</small></div>
+                  <p>{activeCase.patientName ? `Patient: ${activeCase.patientName}` : "Join the live consultation room."}</p>
+                  <button type="button" className="notif-cta" onClick={() => handleCta("Join Call")}>
+                    Join Call
+                  </button>
+                </div>
+              </article>
+            )}
             {todayNotices.map((item) => (
               <article key={`${item.title}-${item.time}`} className={`doc-notif-item ${item.unread ? "unread" : ""}`}>
                 <div className="dot-wrap"><i /></div>
