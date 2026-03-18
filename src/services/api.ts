@@ -1,4 +1,9 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL?.replace(/\/+$/, '') ?? '/api'
+const RAW_BASE = import.meta.env.VITE_API_BASE_URL
+const DEFAULT_BASE = 'https://astikan-backend-production.up.railway.app/api'
+const API_BASE_URL =
+  typeof RAW_BASE === 'string' && RAW_BASE.trim() && RAW_BASE !== 'undefined' && RAW_BASE !== 'null'
+    ? RAW_BASE.replace(/\/+$/, '')
+    : DEFAULT_BASE
 
 type ApiEnvelope<T> = {
   status: 'ok' | 'error'
